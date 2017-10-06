@@ -50,13 +50,16 @@ app.get('/', (req, res) => {
     res.render('home.hbs', {
       title:'HBS Home Page',
       year: new Date().getFullYear(),
-      welcomeMessage:'Welcome to About Home'
+      welcomeMessage:'Welcome to Home Page'
     })
 });
 
 //Defining an about route which will show a basic html page.
 app.get('/about', (req, res) => {
-  res.send('<h1>About Page</h1>');
+  res.render('about.hbs', {
+    title:'About Page',
+    year: new Date().getFullYear()
+  })
 });
 
 //Defining a error route which will return JSON response
