@@ -62,7 +62,13 @@ app.get('/about', (req, res) => {
   })
 });
 
-//Defining a error route which will return JSON response
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    title:'Portfolio Page Here',
+    year: new Date().getFullYear()
+  });
+});
+//Defining an error route which will return JSON response
 app.get('/bad', (req, res) => {
     res.send({
       errorMessage:'Error occurred'
